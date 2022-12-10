@@ -1,0 +1,19 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+ <table class="w3-table w3-blue">
+    <tr>
+      <th>Course ID</th>
+      <th>Name</th>
+    
+    </tr>
+    {%for a in course%}
+    <tr>
+    <td>{{a.course_id}}</td>
+    <td>{{a.Name}}</td>
+<td><button onclick="location.href='{%url 'cperform' i=a.course_id %}'" class="w3-btn w3-green">View Marks</button></td>
+<td><button onclick="location.href='{%url 'chart' i=a.course_id %}'" class="w3-btn w3-green">Show Stats</button></td>
+
+    </tr>
+    {%endfor%}
+  </table>
+  {%endblock%}

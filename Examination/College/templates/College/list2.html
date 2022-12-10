@@ -1,0 +1,19 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+ <table class="w3-table w3-blue">
+    <tr>
+      <th>Student ID</th>
+      <th>Name</th>
+      <th>Percent(avg)</th>
+    
+    </tr>
+    {%for a in stud%}
+    <tr>
+    <td>{{a.studID}}</td>
+    <td>{{a.Name}}</td>
+    <td>{{a.avg}}</td>
+   
+    </tr>
+    {%endfor%}
+  </table>
+  {%endblock%}

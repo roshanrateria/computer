@@ -1,0 +1,13 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:45%;width:10%;margin-top:10%" onclick="location.href='{% url 'Menu' name='student'%}'">Student</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:45%;width:10%;margin-top:2%" onclick="location.href='{% url 'Menu' name='course'%}'">Course</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:45%;width:10%;margin-top:2%" onclick="location.href='{% url 'Menu' name='batch'%}'">Batch</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:45%;width:10%;margin-top:2%" onclick="location.href='{% url 'Menu' name='department'%}'">Department</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:45%;width:10%;margin-top:2%" onclick="location.href='{% url 'Menu' name='examination'%}'">Examination</button>
+{%endblock%}

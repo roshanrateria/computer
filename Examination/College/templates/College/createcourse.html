@@ -1,0 +1,38 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+
+
+  <div class="w3-card-4">
+  <div class="w3-container w3-brown">
+  <h2>Create a Course</h2>
+  </div>
+  <form class="w3-container" action="{% url 'createcourse' %}" method="POST">
+  {%csrf_token%}
+ <p>      
+    <label class="w3-text-brown"><b>Course ID</b></label>
+    <input class="w3-input w3-border w3-sand" type="text"  name="ID" >
+ </p>
+ 
+ <p>      
+    <label class="w3-text-brown"><b>Name</b></label>
+    <input class="w3-input w3-border w3-sand" name="Name" type="text"></p>
+    
+<p>
+
+<label class="w3-text-brown"><b>Batch ID </b></label>
+<br>
+{%for b in batch%}
+
+<input  type="checkbox" id={{b.batch_id}} class='batch' name={{b.batch_id}} value={{b.batch_id}}>
+  <label for={{b.batch_id}}> {{b.batch_id}}</label><br>
+<br>
+ {%endfor%}
+
+<br>
+</p>
+<p>
+    <button class="w3-btn w3-brown">Create</button></p>
+</form>
+</div>
+
+{%endblock%}

@@ -1,0 +1,53 @@
+{% extends 'College/layout.html' %}
+
+{% block body %}
+
+  <div id="container" style="width: 75%;margin-right:0px">
+    <canvas id="chart" ></canvas>
+  </div>
+  <h1 style="margin-left:25%">LEGEND</h1>
+<table class="w3-table w3-blue" style="width:50%;margin-left:10px;padding:10px">
+{%for a in legend%}
+<tr>
+{%for b in a%}
+<td>{{b}}</td>
+{%endfor%}
+</tr>
+{%endfor%}
+<tr>
+</tr>
+
+</table>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+  var col=['#00FFFF','#7FFFD4'
+,'#F0FFFF',
+'#F5F5DC','#FFEBCD',
+'#0000FF',
+'#8A2BE2']
+var c=-1;
+var ctx = document.getElementById("chart").getContext("2d");
+var myScatter = new Chart(ctx, {
+type:'scatter',
+  data: {
+    datasets: [
+     {%for a in data%}
+     {
+     label:"{{a.0}}",
+     backgroundColor:col[c+=1],
+     data:[
+     
+     {%for b in a.1%}
+     {x:{{b.x}},y:{{b.y}}
+     },
+     {%endfor%}
+      ]
+      },
+    {%endfor%}
+    ]
+  },
+ 
+});
+  </script>
+
+{% endblock %}

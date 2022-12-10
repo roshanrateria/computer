@@ -1,0 +1,11 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:10%" onclick="location.href='{% url 'listcourse2'%}'">Enter marks for Exam</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%" onclick="location.href='{% url 'p'%}'">Show Students Performance</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%" onclick="location.href='{% url 'scatterplot'%}'">Show Scatter Plot</button>
+
+
+{%endblock%}

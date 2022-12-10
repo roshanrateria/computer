@@ -1,0 +1,24 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+ <table class="w3-table w3-blue">
+    <tr>
+      <th>Student ID</th>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+        <th>Roll Number</th>
+    </tr>
+    {%for a in stud%}
+    <tr>
+    <td>{{a.StudID}}</td>
+    <td>{{a.Name}}</td>
+    <td>{{a.phone_number}}</td>
+    <td>{{a.email}}</td>
+      <td>{{a.rollno}}</td>
+      <td><button onclick="location.href='{%url 'updateStud' i=a.StudID %}'" class="w3-btn w3-green">Update</button></td>
+       <td><button onclick="location.href='{%url 'deleteStud' i=a.StudID %}'" class="w3-btn w3-red">Delete</button></td>
+        <td><button onclick="location.href='{%url 'reportcard' i=a.StudID %}'" class="w3-btn w3-blue">Get Report</button></td>
+    </tr>
+    {%endfor%}
+  </table>
+  {%endblock%}

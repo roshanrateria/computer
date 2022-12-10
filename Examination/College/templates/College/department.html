@@ -1,0 +1,12 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:10%" onclick="location.href='{% url 'createdept'%}'">Create a Department</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%" onclick="location.href='{% url 'department'%}'">View Batches</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%" onclick="location.href='{% url 'department'%}'">View Average Performance</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%"  onclick="location.href='{% url 'department'%}'">View statistics</button>
+
+{%endblock%}

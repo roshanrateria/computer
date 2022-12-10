@@ -1,0 +1,24 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+ <table class="w3-table w3-blue">
+    <tr>
+      <th>Dept ID</th>
+      
+    <th>Department Name</th>
+    <th></th>   <th></th>
+    
+      <th>Average</th>
+    </tr>
+    {%for a in dept%}
+    <tr>
+    <td>{{a.dept_id}}</td>
+    <td>{{a.name}}</td>
+ 
+  <td><button  onclick="location.href='{% url 'listdept' a.dept_id %}'" class="w3-btn w3-green">View</button></td>
+  
+  <td><button  onclick="location.href='{% url 'lchart' a.dept_id %}'" class="w3-btn w3-green">Stats</button></td>
+    <td>{{a.avg}}</td>
+    </tr>
+    {%endfor%}
+  </table>
+  {%endblock%}

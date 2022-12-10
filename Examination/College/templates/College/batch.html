@@ -1,0 +1,12 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:10%" onclick="location.href='{% url 'createbatch'%}'">Create a batch</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%" onclick="location.href='{% url 'batchlist'%}'">View list of all students</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%" onclick="location.href='{% url 'batchlist'%}'">View list of all courses taught in the batch </button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%"  onclick="location.href='{% url 'batchlist'%}'">View complete performance of all students in a batch</button>
+
+{%endblock%}

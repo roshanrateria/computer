@@ -1,0 +1,21 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+ <table class="w3-table w3-blue">
+    <tr>
+      <th>Batch ID</th>
+      <th>Name</th>
+    <th>Department Name</th>
+    </tr>
+    {%for a in batch%}
+    <tr>
+    <td>{{a.batch_id}}</td>
+    <td>{{a.name}}</td>
+  <td>{{a.dept_name}}</td>
+  <td><button  onclick="location.href='{% url 'listbatch' i=a.batch_id %}'" class="w3-btn w3-green">View Students</button></td>
+   <td><button  onclick="location.href='{% url 'listcourse' i=a.batch_id %}'" class="w3-btn w3-red">View Courses</button></td>
+    <td><button  onclick="location.href='{% url 'pchart' i=a.batch_id %}'" class="w3-btn w3-yellow">View Stats</button></td>
+     
+    </tr>
+    {%endfor%}
+  </table>
+  {%endblock%}

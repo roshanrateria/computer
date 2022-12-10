@@ -1,0 +1,45 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+
+
+  <div class="w3-card-4">
+  <div class="w3-container w3-brown">
+  <h2>Create a Student</h2>
+  </div>
+  <form class="w3-container" action="{% url 'updateStud' stud.StudID %}" method="POST">
+  {%csrf_token%}
+ <p>      
+    <label class="w3-text-brown"><b>Student ID</b></label>
+    <input class="w3-input w3-border w3-sand" type="text"  name="ID" value='{{stud.StudID}}'>
+ </p>
+ 
+ <p>      
+    <label class="w3-text-brown"><b>Name</b></label>
+    <input class="w3-input w3-border w3-sand" name="Name" type="text" value="{{stud.Name}}"></p>
+    
+    <p>      
+    <label class="w3-text-brown"><b>Phone Number</b></label>
+    <input class="w3-input w3-border w3-sand" name="phone_number" type="text" value="{{stud.phone_number}}"></p>
+    
+    <p>      
+    <label class="w3-text-brown"><b>Email ID </b></label>
+    <input class="w3-input w3-border w3-sand" name="email" type="email" value="{{stud.email}}"></p>
+    <p>      
+    <label class="w3-text-brown"><b>Roll Number : </b></label>
+    <input class="w3-input w3-border w3-sand" name="rollno" type="number" min=0 value={{stud.rollno}}></p>
+
+
+<label class="w3-text-brown"><b>Batch ID </b></label>
+<select class="w3-input w3-border w3-sand" id="batch" name="batch">
+<option value={{batch}} selected>{{batch}}</option>
+{%for a in s%}
+ <option value={{a.batch_id}}>{{a.batch_id}}</option>
+ {%endfor%}
+</select>
+<br>
+<p>
+    <button class="w3-btn w3-brown">Create</button></p>
+</form>
+</div>
+
+{%endblock%}

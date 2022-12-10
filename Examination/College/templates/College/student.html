@@ -1,0 +1,12 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:10%" onclick="location.href='{% url 'createStud'%}'">Create a Student</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%"  onclick="location.href='{% url 'listStud' %}'">Update Student Details</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%" onclick="location.href='{% url 'listStud' %}'">Remove a Student</button>
+
+<button class="w3-btn w3-blue" style="padding:20px;margin-left:40%;width:20%;margin-top:2%" onclick="location.href='{% url 'listStud' %}'">Generate Report Card</button>
+
+{%endblock%}

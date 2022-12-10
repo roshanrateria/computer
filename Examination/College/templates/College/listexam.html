@@ -1,0 +1,17 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+ <table class="w3-table w3-blue">
+    <tr>
+      <th>Course ID</th>
+      <th>Name</th>
+    <th></th>
+    </tr>
+    {%for a in course%}
+    <tr onclick="location.href='{% url 'createExam' i=a.course_id %}'">
+    <td>{{a.course_id}}</td>
+    <td>{{a.Name}}</td>
+<td><button href="{% url 'createExam' a.course_id%}">Enter Marks</button></td>
+    </tr>
+    {%endfor%}
+  </table>
+  {%endblock%}

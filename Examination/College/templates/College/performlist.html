@@ -1,0 +1,20 @@
+{%extends 'College/layout.html'%}
+{%block body%}
+ <table class="w3-table w3-blue">
+    <tr>
+      <th>Student Roll Number</th>
+      <th>Name</th>
+      <th>{{h}} Marks</th>
+     
+    </tr>
+    {%for a in mark%}
+    <tr>
+    <td>{{a.StudID}}</td>
+    <td>{{a.Name}}</td>
+    
+      <td>{{a.mark}}</td>
+      
+    </tr>
+    {%endfor%}
+  </table>
+  {%endblock%}
